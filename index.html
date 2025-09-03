@@ -819,41 +819,7 @@
                     </div>
                 </section>
                 
-                <div class="cors-solution">
-                    <h3><i class="fas fa-exclamation-triangle"></i> CORS Policy Issue Solutions</h3>
-                    <p>CORS (Cross-Origin Resource Sharing) policy এর কারণে কিছু TV channel load হতে সমস্যা হচ্ছে। নিচের উপায়গুলো try করুন:</p>
-                    
-                    <ul>
-                        <li><strong>Browser Extension ব্যবহার করুন:</strong> CORS Unblock বা类似 extension Chrome/Firefox এ install করুন</li>
-                        <li><strong>Proxy Server ব্যবহার করুন:</strong> নিচে একটি proxy server URL দিন</li>
-                        <li><strong>Local Server চালু করুন:</strong> VS Code Live Server বা类似 tool ব্যবহার করুন</li>
-                    </ul>
-                    
-                    <div class="proxy-form">
-                        <h4>Proxy Server ব্যবহার করুন:</h4>
-                        <input type="text" id="proxy-input" placeholder="https://your-proxy-server.com/?url=" value="https://corsproxy.io/?">
-                        <button id="apply-proxy">Apply Proxy</button>
-                    </div>
-                    
-                    <div class="code-block">
-                        // CORS সমস্যা সমাধানের জন্য code-level solution<br>
-                        // Server-side proxy implementation example<br>
-                        const express = require('express');<br>
-                        const fetch = require('node-fetch');<br>
-                        const app = express();<br><br>
-                        
-                        app.get('/proxy', async (req, res) => {<br>
-                        &nbsp;&nbsp;const url = req.query.url;<br>
-                        &nbsp;&nbsp;try {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;const response = await fetch(url);<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;const body = await response.text();<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;res.send(body);<br>
-                        &nbsp;&nbsp;} catch (error) {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;res.status(500).send('Error');<br>
-                        &nbsp;&nbsp;}<br>
-                        });
-                    </div>
-                </div>
+
             </div>
         </div>
         
